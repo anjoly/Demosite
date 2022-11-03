@@ -27,11 +27,13 @@ class CouponController extends Controller
             $result['title']=$arr['0']->title;
             $result['code']=$arr['0']->code;
             $result['value']=$arr['0']->value;
+            $result['status']=$arr['0']->status;
             $result['id']=$arr['0']->id;
         }else{
             $result['title']='';
             $result['code']='';
             $result['value']='';
+            $result['status']='';
             $result['id']=0;
 
         }
@@ -60,6 +62,7 @@ class CouponController extends Controller
         $model->title=$request->post('title');
         $model->code=$request->post('code');
         $model->value=$request->post('value');
+        $model->status=$request->post('status');
         $model->save();
         $request->session()->flash('message',$msg);
         return redirect('Admin/coupon');
@@ -72,6 +75,16 @@ class CouponController extends Controller
         $request->session()->flash('message','Coupon deleted');
         return redirect('Admin/coupon');
     }
+
+
+    public function status(Request $request,$status,$id){
+        $model=Coupon::find($id);
+        $model->status=$status;
+        $model->save();
+        $request->session()->flash('message','Coupon status updated');
+        return redirect('Admin/coupon');
+    }
+
 
 
 }

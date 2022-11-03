@@ -10,6 +10,7 @@
     <link href="{{asset('assets/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="{{asset('assets/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/css/theme.css')}}" rel="stylesheet" media="all">
@@ -73,7 +74,7 @@
                         </li>
 
                         <li class="@yield('category_select')">
-                            <a href="{{url('admin/category')}}">
+                            <a href="{{url('Admin/category')}}">
                                 <i class="fas fa-list"></i>Category</a>
                         </li>
 
@@ -81,6 +82,22 @@
                             <a href="{{url('Admin/coupon')}}">
                                 <i class="fas fa-tag"></i>Coupon</a>
                         </li>
+
+                        <li class="@yield('size_select')">
+                            <a href="{{url('Admin/size')}}">
+                                <i class="fas fa-window-maximize"></i>Size</a>
+                        </li>
+
+                        <li class="@yield('color_select')">
+                            <a href="{{url('Admin/color')}}">
+                                <i class="fas fa-paint-brush"></i>Color</a>
+                        </li>
+
+                        <li class="@yield('product_select')">
+                            <a href="{{url('Admin/product')}}">
+                                <i class="fa fa-product-hunt"></i>Product</a>
+                        </li>
+
 
                     </ul>
                 </nav>

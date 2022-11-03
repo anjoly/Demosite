@@ -70,6 +70,4 @@ class CategoryController extends Controller
         $request->session()->flash('message','Category status updated');
         return redirect('Admin/category');
     }
-
-
 }

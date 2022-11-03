@@ -3,8 +3,8 @@
 @section('category_select','active')
 @section('container')
     <h1 class="mb10">Manage Category</h1>
-    <a href="category">
-    <button type="button" class="btn btn-success">
+    <a href="{{url('Admin/category')}}">
+        <button type="button" class="btn btn-success">
         Back
     </button>
     </a>
@@ -15,7 +15,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{route('category.insert')}}" method="post">
+                            <form action="{{route('Admin.manage_category_process')}}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="category_name" class="control-label mb-1">Category name</label>
@@ -40,6 +40,7 @@
                                         Submit
                                     </button>
                                 </div>
+                                <input type="hidden" name="id" value="{{$id}}"/>
                             </form>
                         </div>
                     </div>
